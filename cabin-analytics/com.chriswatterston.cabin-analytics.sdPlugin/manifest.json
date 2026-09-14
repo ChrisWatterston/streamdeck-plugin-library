@@ -1,0 +1,47 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "SDKVersion": 2,
+  "Author": "Chris Watterston",
+  "CodePath": "bin/plugin.js",
+  "Description": "Display Cabin website analytics metrics on Stream Deck keys.",
+  "Icon": "imgs/plugin-icon",
+  "Name": "Cabin Analytics",
+  "Category": "Cabin Analytics",
+  "CategoryIcon": "imgs/category-icon",
+  "UUID": "com.chriswatterston.cabin-analytics",
+  "Version": "0.1.0.0",
+  "Nodejs": {
+    "Version": "24"
+  },
+  "Software": {
+    "MinimumVersion": "7.3"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "13"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Actions": [
+    {
+      "Name": "Cabin Stat",
+      "UUID": "com.chriswatterston.cabin-analytics.stat",
+      "Icon": "imgs/action-icon",
+      "Tooltip": "Shows a selected Cabin analytics metric.",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/property-inspector.html",
+      "States": [
+        {
+          "Image": "imgs/key-image",
+          "TitleAlignment": "middle",
+          "FontSize": 14,
+          "FontStyle": "Bold"
+        }
+      ]
+    }
+  ]
+}

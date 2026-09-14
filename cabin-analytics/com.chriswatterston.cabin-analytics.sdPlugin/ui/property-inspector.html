@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cabin Analytics Settings</title>
+    <style>
+      /* Property inspector theme tokens. Change these to restyle the settings panel. */
+      :root {
+        color-scheme: dark;
+        --background: #202124;
+        --panel: #2c2d31;
+        --border: #45464d;
+        --text: #f3f3f3;
+        --muted: #a9abb3;
+        --accent: #72d6a2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 16px;
+        font:
+          13px/1.4 -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background: var(--background);
+      }
+
+      form {
+        display: grid;
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+      }
+
+      span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      input,
+      select,
+      button {
+        width: 100%;
+        min-height: 32px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text);
+        background: var(--panel);
+        font: inherit;
+      }
+
+      input,
+      select {
+        padding: 6px 8px;
+      }
+
+      button {
+        cursor: pointer;
+        font-weight: 600;
+      }
+
+      button:hover {
+        border-color: var(--accent);
+      }
+
+      .hint {
+        margin: 0;
+        color: var(--muted);
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="settings-form">
+      <!-- Global setting: saved once for the plugin, shared by all Cabin Stat keys. -->
+      <label>
+        <span>Cabin API key</span>
+        <input id="apiKey" type="password" autocomplete="off" placeholder="cab_..." />
+      </label>
+
+      <!-- Per-key settings: saved separately for each Stream Deck key. -->
+      <label>
+        <span>Domain</span>
+        <input id="domain" type="text" autocomplete="off" placeholder="example.com" />
+      </label>
+
+      <label>
+        <span>Metric</span>
+        <select id="metric">
+          <option value="page_views">Page views</option>
+          <option value="unique_visitors">Unique visitors</option>
+          <option value="bounces">Bounces</option>
+          <option value="bounce_rate">Bounce rate</option>
+          <option value="top_country">Top country</option>
+          <option value="top_browser">Top browser</option>
+          <option value="top_device">Top device</option>
+          <option value="search_traffic">Search traffic</option>
+          <option value="social_traffic">Social traffic</option>
+          <option value="top_page">Top page</option>
+          <option value="top_referral">Top referral</option>
+          <option value="co2_grams">CO2 grams</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Date range</span>
+        <select id="datePreset">
+          <option value="today">Today</option>
+          <option value="yesterday">Yesterday</option>
+          <option value="last_7_days">Last 7 days</option>
+          <option value="last_30_days">Last 30 days</option>
+          <option value="this_month">This month</option>
+        </select>
+      </label>
+
+      <label>
+        <span>Refresh rate</span>
+        <select id="refreshMinutes">
+          <option value="15">Every 15 minutes</option>
+          <option value="30">Every 30 minutes</option>
+          <option value="60">Every 1 hour</option>
+          <option value="360">Every 6 hours</option>
+          <option value="720">Every 12 hours</option>
+          <option value="1440">Every 24 hours</option>
+        </select>
+      </label>
+
+      <!-- Sends a message to the plugin runtime, which forces the current key to refresh. -->
+      <button type="button" id="refreshNow">Refresh now</button>
+      <p class="hint">Pressing the Stream Deck key also refreshes this stat.</p>
+    </form>
+
+    <script src="property-inspector.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "cabin-analytics-streamdeck-plugin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stream Deck plugin for Cabin web analytics.",
+  "scripts": {
+    "check": "node --check com.chriswatterston.cabin-analytics.sdPlugin/bin/plugin.js && node --check com.chriswatterston.cabin-analytics.sdPlugin/ui/property-inspector.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
