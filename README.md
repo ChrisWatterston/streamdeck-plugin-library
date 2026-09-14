@@ -22,7 +22,7 @@ Below are the current plugins available - enjoy!
 
 #### Cabin Analytics
 
-![image](https://github.com/ChrisWatterston/streamdeck-plugin-library/var/assets/pligin-banner-cabin-analytics.jpg)
+![image](https://github.com/ChrisWatterston/streamdeck-plugin-library/blob/master/var/assets/pligin-banner-cabin-analytics.jpg)
 
 - [`cabin-analytics`](./cabin-analytics) - Display Cabin web analytics metrics on Stream Deck keys. [Cabin Analytics](https://withcabin.com/) is a lightweight, carbon-conscious Google Analytics alternative. No cookies, no consent banners, and 100% GDPR & CCPA compliant by design.
 
