@@ -39,6 +39,7 @@ const DATE_PRESET_LABELS = {
   today: "Today",
   yesterday: "Yesterday",
   last_7_days: "Last 7 days",
+  last_14_days: "Last 14 days",
   last_30_days: "Last 30 days",
   this_month: "This month",
 };
@@ -417,6 +418,7 @@ function isKnownDatePreset(value) {
     "today",
     "yesterday",
     "last_7_days",
+    "last_14_days",
     "last_30_days",
     "this_month",
   ].includes(String(value));
@@ -440,6 +442,9 @@ function getDateRange(datePreset) {
       break;
     case "last_7_days":
       from.setDate(from.getDate() - 6);
+      break;
+    case "last_14_days":
+      from.setDate(from.getDate() - 13);
       break;
     case "last_30_days":
       from.setDate(from.getDate() - 29);

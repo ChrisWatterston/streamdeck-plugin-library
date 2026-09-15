@@ -75,12 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fields[id] = document.getElementById(id);
   }
 
-  for (const id of [
-    "domain",
-    "metric",
-    "datePreset",
-    "refreshMinutes",
-  ]) {
+  for (const id of ["domain", "metric", "datePreset", "refreshMinutes"]) {
     // Save key-specific settings such as domain, metric, date range, and refresh interval.
     fields[id].addEventListener("change", saveActionSettings);
     fields[id].addEventListener("input", queueActionSettingsSave);
@@ -216,6 +211,7 @@ function isKnownDatePreset(value) {
     "today",
     "yesterday",
     "last_7_days",
+    "last_14_days",
     "last_30_days",
     "this_month",
   ].includes(value);
